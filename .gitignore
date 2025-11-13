@@ -1,0 +1,29 @@
+# WebAPI (ASP.NET Core)
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Configuration files with secrets
+appsettings.Development.json
+appsettings.Production.json
+*.env
+.env
+.env.local
+.env.development
+.env.production
+
+# IDE
+.vs/
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log

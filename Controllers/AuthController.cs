@@ -15,10 +15,28 @@ namespace AiMiddleTier.Controllers
     {
         private static List<User> users = new();
         private readonly IConfiguration _config;
+        private static bool _seedDataAdded = false;
 
         public AuthController(IConfiguration config)
         {
             _config = config;
+
+            // Add seeded test user (only once)
+            if (!_seedDataAdded)
+            {
+                var seedUser = new User
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    FirstName = "Test",
+                    LastName = "User",
+                    Email = "a@a.a",
+                    PasswordHash = HashPassword("P@$$w0rd"),
+                    CreatedAt = DateTime.UtcNow,
+                    LastLogin = DateTime.UtcNow
+                };
+                users.Add(seedUser);
+                _seedDataAdded = true;
+            }
         }
 
         // Register endpoint

@@ -29,7 +29,7 @@ namespace AiMiddleTier.Controllers
                     Id = Guid.NewGuid().ToString(),
                     FirstName = "Test",
                     LastName = "User",
-                    Email = "a@a.a",
+                    Email = "test@example.com",
                     PasswordHash = HashPassword("P@$$w0rd"),
                     CreatedAt = DateTime.UtcNow,
                     LastLogin = DateTime.UtcNow
